@@ -13,6 +13,7 @@ function App() {
     if (!socket) return;
     socket.on("error", (message: string) => {
       alert(`Error : ${message}`);
+      window.location.reload();
     });
   }, [socket]);
 
