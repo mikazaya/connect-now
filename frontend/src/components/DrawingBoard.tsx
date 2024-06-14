@@ -22,6 +22,7 @@ const DrawingBoard = (props: DrawingBoardProps) => {
   }, [props.height, props.width]);
   return (
     <canvas
+      className="border m-5 bg-white"
       ref={ref}
       onMouseDown={context.handleMouseDown}
       onMouseUp={context.handleMouseUp}

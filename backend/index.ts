@@ -51,14 +51,6 @@ io.on("connection", (socket: SocketIO.Socket): void => {
     rooms.set(room.id, room);
   }
   socket.on("chat-message", (message: Message) => {
-    if (message.body === room.round.word) {
-      const m = {
-        author: "Server",
-        body: `${message.author} guessed the correct word`,
-      };
-      room.broadcast(m);
-      return;
-    }
     room.broadcast(message);
   });
 

@@ -43,14 +43,6 @@ io.on("connection", function (socket) {
         rooms.set(room.id, room);
     }
     socket.on("chat-message", function (message) {
-        if (message.body === room.round.word) {
-            var m = {
-                author: "Server",
-                body: "".concat(message.author, " guessed the correct word"),
-            };
-            room.broadcast(m);
-            return;
-        }
         room.broadcast(message);
     });
     socket.on("line-draw", function (line) {

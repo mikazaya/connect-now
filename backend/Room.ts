@@ -7,7 +7,6 @@ class Room {
   id: string;
   userRefs: Map<string, User>;
   io: SocketIO.Socket;
-  round: Round;
   private constructor(roomId: string, io: SocketIO.Socket) {
     this.id = roomId;
     this.io = io;
@@ -38,11 +37,7 @@ class Room {
     this.io.to(this.id).emit(event, message);
   }
 
-  startRound() {
-    if (this.round.state === RoundState.running) return;
-    this.round = new Round();
-    this.round.startRound();
-  }
+
 }
 
 export default Room;

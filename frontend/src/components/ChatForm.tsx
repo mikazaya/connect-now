@@ -18,8 +18,15 @@ const ChatForm = () => {
     socket.emit("chat-message", message);
   };
   return (
-    <form onSubmit={(e) => sendMessage(e)}>
+    <form
+      className="w-full"
+      onSubmit={(e) => {
+        sendMessage(e);
+        setChatInput("");
+      }}
+    >
       <input
+        className="p-1 m-1 border-b-2 focus-visible:outline-none"
         type="text"
         value={chatInput}
         onChange={(e) => setChatInput(e.target.value)}
