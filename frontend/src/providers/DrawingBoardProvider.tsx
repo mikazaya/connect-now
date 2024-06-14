@@ -1,6 +1,6 @@
 import React from "react";
 import { DrawingBoardContextProps, Line } from "../types/interfaces";
-import { GameContext } from "./GameProvider";
+
 import Socket from "../utils/Socket";
 import { BoardEvent } from "../types/types";
 
@@ -13,7 +13,6 @@ interface DrawingBoardProviderProps {
 }
 
 const DrawingBoardProvider = (props: DrawingBoardProviderProps) => {
-  const context = React.useContext(GameContext);
   const [isDrawing, setIsDrawing] = React.useState(false);
   const [ctx, setCtx] = React.useState<CanvasRenderingContext2D>();
   const [color, setColor] = React.useState("#000000");

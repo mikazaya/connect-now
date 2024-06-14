@@ -1,4 +1,4 @@
-import { BoardEvent, RoundScore, RoundTime, User } from "./types";
+import { BoardEvent, User } from "./types";
 
 export interface GameContextProps {
   me: User;

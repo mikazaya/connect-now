@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Message } from "../types/types";
 import Socket from "../utils/Socket";
 import ChatMessages from "./ChatMessages";
